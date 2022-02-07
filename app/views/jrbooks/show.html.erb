@@ -1,0 +1,28 @@
+
+<div class="card text-white bg-warning mb-3" style="width: 30rem;">
+<div class="card-body">
+  <h1 class="card-title"><%= @jrbook.name %></h1>
+  <p class="card-text">
+  <p class="lead">
+  
+  <%= @jrbook.author %>
+ </p>
+
+<p>
+  <strong>Read:</strong>
+  <%= @jrbook.completed %>
+</p>
+
+  </div>
+  </div>
+
+  <%= link_to 'Edit', edit_jrbook_path(@jrbook), class:"btn btn-primary" %> 
+
+  <%= link_to 'Back', jrbooks_path, class:"btn btn-primary" %>
+</div>
+
+
+
+
+
+

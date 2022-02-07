@@ -1,0 +1,40 @@
+<%= form_with(model: jrbook) do |form| %>
+  <% if jrbook.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(jrbook.errors.count, "error") %> prohibited this jrbook from being saved:</h2>
+
+      <ul>
+        <% jrbook.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    
+    <%= form.text_field :name, class:"form-control", placeholder:"Book Name" %>
+  </div>
+  <br/>
+
+  <div class="field form-group">
+    
+    <%= form.text_field :author, class:"form-control", placeholder:"Author Name" %>
+  </div>
+ 
+  <div class="field form-group">
+    
+    <%= form.number_field :user_id, id: :jrbook_user_id, class:"form-control", value: current_user.id, type: :hidden %>
+  </div>
+  <br/>
+  
+  <div class="field form-group">
+    <%= form.label :Read %>
+    <%= form.check_box :completed %>
+  </div>
+
+  <br/>
+  <div class="actions">
+    <%= form.submit class:"btn btn-primary" %>
+  </div>
+<% end %>
